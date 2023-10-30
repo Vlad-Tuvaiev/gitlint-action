@@ -61,7 +61,7 @@ inputs:
     description: "Regular expression to check commit author name"
     required: false
     default: |
-      ^GitHub$
+      ^.*$
   re-commit-message-body:
     description: "Regular expression to check commit message body"
     required: false
