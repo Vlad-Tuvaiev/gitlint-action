@@ -51,7 +51,8 @@ inputs:
   re-commit-author-name:
     description: "Regular expression to check commit author name"
     required: false
-    default: ".*"
+    default: |
+      ^[A-Z][a-z]+[A-Za-z]*(-[A-Z][a-z]+[A-Za-z]*)*( ((St\.|[Vv]an|[Dd]e[lr]?|[Ll]a)|[A-Z](\.|[a-z]+[A-Za-z]*)(-[A-Z](\.|[a-z]+[A-Za-z]*))*))*( [A-Z][a-z]+[A-Za-z]*(-[A-Z][a-z]+[A-Za-z]*)*)$
   re-commit-committer-email:
     description: "Regular expression to check commit author email"
     required: false
@@ -59,19 +60,21 @@ inputs:
   re-commit-committer-name:
     description: "Regular expression to check commit author name"
     required: false
-    default: ".*"
+    default: |
+      ^[A-Z][a-z]+[A-Za-z]*(-[A-Z][a-z]+[A-Za-z]*)*( ((St\.|[Vv]an|[Dd]e[lr]?|[Ll]a)|[A-Z](\.|[a-z]+[A-Za-z]*)(-[A-Z](\.|[a-z]+[A-Za-z]*))*))*( [A-Z][a-z]+[A-Za-z]*(-[A-Z][a-z]+[A-Za-z]*)*)$
+  re-commit-message-body:
     description: "Regular expression to check commit message body"
     required: false
     default: ".*"
   re-commit-message-split:
     description: "Regular expression to split commit message into subject and body"
     required: false
-    default: ".*"
+    default: "([^\n]*)(?:\n\n(.*))?"
   re-commit-message-subject:
     description: "Regular expression to check commit message subject"
     required: false
     default: |
-      ^((?!Merge pull request)[A-Z]{2,10}-[0-9]+)(, [A-Z]{2,10}-[0-9]+)*: \b(?!Made)(?![A-Za-z]*(ing|ung|ang|ed|id|[^s]s)\b)[A-Z][a-z]*\b [/\- ._,()A-Za-z0-9]*[)A-Za-z0-9]$
+      ^(([A-Z]{2,10}-[0-9]+)(, [A-Z]{2,10}-[0-9]+)*: )?\b(?!Made)(?![A-Za-z]*(ing|ung|ang|ed|id|[^s]s)\b)[A-Z][a-z]*\b [/\- ._,()A-Za-z0-9]*[)A-Za-z0-9]$
   re-pull-request-title:
     description: "Regular expression to check pull request title"
     required: false
