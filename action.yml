@@ -67,7 +67,7 @@ inputs:
   re-commit-message-split:
     description: "Regular expression to split commit message into subject and body"
     required: false
-    default: "([^\n]*)(?:\n\n(.*))?"
+    default: ".*"
   re-commit-message-subject:
     description: "Regular expression to check commit message subject"
     required: false
