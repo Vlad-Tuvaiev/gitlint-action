@@ -60,8 +60,7 @@ inputs:
   re-commit-committer-name:
     description: "Regular expression to check commit author name"
     required: false
-    default: |
-      ^.*$
+    default: ".*"
   re-commit-message-body:
     description: "Regular expression to check commit message body"
     required: false
