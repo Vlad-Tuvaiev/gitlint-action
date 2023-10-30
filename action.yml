@@ -51,8 +51,7 @@ inputs:
   re-commit-author-name:
     description: "Regular expression to check commit author name"
     required: false
-    default: |
-      ^[A-Z][a-z]+[A-Za-z]*(-[A-Z][a-z]+[A-Za-z]*)*( ((St\.|[Vv]an|[Dd]e[lr]?|[Ll]a)|[A-Z](\.|[a-z]+[A-Za-z]*)(-[A-Z](\.|[a-z]+[A-Za-z]*))*))*( [A-Z][a-z]+[A-Za-z]*(-[A-Z][a-z]+[A-Za-z]*)*)$
+    default: ".*"
   re-commit-committer-email:
     description: "Regular expression to check commit author email"
     required: false
